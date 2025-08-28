@@ -1,0 +1,13 @@
+@use "../../../../app/style/vars" as *;
+@use "../../../../app/style/mixins" as *;
+
+.checkbox_custom {
+    width: 24px;
+    height: 24px;
+
+    
+    @include respond-between(small, large) {
+        width: 16px;
+        height: 16px;
+    }
+}

@@ -1,0 +1,18 @@
+@import '../../../node_modules/reset-css';
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}

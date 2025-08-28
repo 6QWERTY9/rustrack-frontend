@@ -1,0 +1,27 @@
+@use "../../../../app/style/vars" as *;
+@use "../../../../app/style/mixins" as *;
+
+.chevron_button {
+    width: 40px;
+    height: 40px;
+    background: none;
+
+    border: 1px solid black;
+    border-radius: 4px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+        background-color: $yellow;
+    }
+    &:focus {
+        background-color: $yellowPress;
+    }
+
+    @include respond-between(small, large) {
+        width: 32px;
+        height: 32px;
+    }
+}

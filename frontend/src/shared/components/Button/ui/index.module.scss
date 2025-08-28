@@ -1,0 +1,44 @@
+@use "../../../../app/style/vars" as *;
+@use "../../../../app/style/mixins" as *;
+
+
+.button, .button.border, .button.normal {
+    width: 200px;
+    height: 50px;
+    @include textStyle($fontSize: $desFontSize16, $fontWeight: $fontWeightMed);
+    border: none;
+    background-color: $yellow;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $yellowHover;
+    }
+
+    &:focus {
+        background-color: $yellowPress;
+        color: #4D4011;
+    }
+
+    @include respond-between(small, large) {
+        width: 150px;
+        height: 40px;
+    }
+}
+
+.button.border {
+    background-color: #fff;
+    border: 2px solid $yellow;
+
+    transition: background-color, 200ms ease-in-out;
+}
+
+.button.icon {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}

@@ -1,0 +1,49 @@
+// text style vars
+
+$defaultFontFamily: 'Fira Sans', sans-serif;
+
+// font sizes
+
+$desFontSize42: 42px;
+$desFontSize32: 32px;
+$desFontSize24: 24px;
+$desFontSize22: 22px;
+$desFontSize18: 18px;
+$desFontSize16: 16px;
+$desFontSize14: 14px;
+
+$mobFontSize28: 28px;
+$mobFontSize24: 24px;
+$mobFontSize20: 20px;
+$mobFontSize18: 18px;
+$mobFontSize16: 16px;
+$mobFontSize14: 14px;
+$mobFontSize12: 12px;
+
+// font weight
+$fontWeightReg: 400;
+$fontWeightMed: 500;
+$fontWeightBold: 800;
+
+// colors
+
+$black: #000000;
+$yellow: #fec80b;
+$yellowHover: #ffd43a;
+$yellowPress: #e9c135;
+$textPress: #4d4011;
+
+// Breakpoints (по умолчанию — mobile-first)
+$breakpoints: (
+    'small': 320px,
+    // Телефоны
+    'medium': 576px,
+    // Крупные телефоны / мелкие планшеты
+    'large': 768px,
+    // Планшеты
+    'xlarge': 1024px,
+    // Ноутбуки
+    'xxlarge': 1440px,
+    // Мониторы
+    'fullhd': 1920px, // Большие экраны
+);

@@ -1,0 +1,25 @@
+@use "../../../../app/style/vars" as *;
+@use "../../../../app/style/mixins" as *;
+
+.link {
+    @include textStyle($color: #A1A1A1);
+
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+
+    & > div > div > svg {
+        display: flex;
+        align-items: center;
+        
+    }
+
+    &:hover {
+        color: $yellow;
+
+        & > div > div > svg > path {
+            fill: $yellow;
+        }
+    }
+}
