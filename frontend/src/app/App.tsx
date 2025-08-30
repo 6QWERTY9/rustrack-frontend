@@ -5,6 +5,7 @@ import { Button } from '../shared/components/Button';
 import { ChevronButton } from '../shared/components/ChevronButton';
 
 import { LinkLayout } from '../shared/components/LinkLayout';
+import { TextInput } from '../shared/components/Input/ui/Text-input';
 
 export const App = () => {
     return (
@@ -17,6 +18,7 @@ export const App = () => {
                 </LinkLayout>
             </BrowserRouter>
             <ChevronButton directionIcon="left" />
+            <TextInput/>
         </div>
     );
 };

@@ -1,3 +1,3 @@
-import TextInput from './TextInput.tsx'
+import {TextInput} from './TextInput.tsx'
 
 export { TextInput }
