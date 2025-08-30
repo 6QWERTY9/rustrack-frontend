@@ -3,7 +3,7 @@ import { ReactSVG } from 'react-svg';
 import { Button } from '../shared/components/Button';
 
 import { ChevronButton } from '../shared/components/ChevronButton';
-import { InputLayout } from '../shared/components/InputLayout';
+
 import { LinkLayout } from '../shared/components/LinkLayout';
 
 export const App = () => {
@@ -17,8 +17,6 @@ export const App = () => {
                 </LinkLayout>
             </BrowserRouter>
             <ChevronButton directionIcon="left" />
-
-            <InputLayout type="text" placeholder="Иван Иванов" id="search" label="Имя" />
         </div>
     );
 };
