@@ -2,7 +2,7 @@ import clsx from "clsx";
 import type { ITextInputProps } from "../model";
 import css from './index.module.scss';
 import { useState } from "react";
-import { handleClear } from "../config";
+
 import { ReactSVG } from "react-svg";
 
 export const TextInput: React.FC<ITextInputProps> = ({label, error, ...props}) => {
@@ -14,9 +14,9 @@ export const TextInput: React.FC<ITextInputProps> = ({label, error, ...props}) =
           {label}
         </label>
       )}
-      <input type="text" placeholder={props.placeholder} onChange={(e) => setInputVal(e.target.value)} value={inputVal} className={css.input_layout}/>
+      <input type="text" placeholder={props.placeholder} onChange={(e) => setInputVal(e.target.value)} value={inputVal} className={clsx(css.input, css.text)} />
       {inputVal && (
-        <ReactSVG src="./svg/close.svg" onClick={() => handleClear(setInputVal)} className={css.cross}/>
+        <ReactSVG src="./svg/close.svg" onClick={() => setInputVal('')} className={css.cross}/>
       )}
       {error && (
           <span className={clsx(css.error_massage)}>

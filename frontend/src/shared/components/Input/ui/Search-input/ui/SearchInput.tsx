@@ -17,7 +17,7 @@ export const SearchInput: React.FC<ISearchInputProps> = ({ value: externalValue,
   return (
     <div className={css.input_wrapper}>
       <ReactSVG src='./svg/search.svg'/>
-      <input type="search" value={value} onChange={handleChange} placeholder={placeholder} className={clsx(css.input_layout, css.search_input)} {...props} />
+      <input type="search" value={value} onChange={handleChange} placeholder={placeholder} className={clsx(css.input, css.search)} {...props} />
     </div>
   )
 };

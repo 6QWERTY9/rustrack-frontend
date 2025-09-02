@@ -5,8 +5,7 @@ import { Button } from '../shared/components/Button';
 import { ChevronButton } from '../shared/components/ChevronButton';
 
 import { LinkLayout } from '../shared/components/LinkLayout';
-import { TextInput } from '../shared/components/Input/ui/Text-input';
-import { SearchInput } from '../shared/components/Input/ui/Search-input/ui/SearchInput';
+import { Input } from '../shared/components/Input';
 
 export const App = () => {
     return (
@@ -19,8 +18,11 @@ export const App = () => {
                 </LinkLayout>
             </BrowserRouter>
             <ChevronButton directionIcon="left" />
-            <TextInput/>
-            <SearchInput/>
+            <Input type='search'/>
+            <Input/>
+            <Input type='checkbox'/>
+            <Input type='radio'/>
+
         </div>
     );
 };
