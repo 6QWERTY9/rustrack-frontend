@@ -20,7 +20,7 @@ export const App = () => {
             <ChevronButton directionIcon="left" />
             <Input type='search'/>
             <Input/>
-            <Input type='checkbox'/>
+            <Input type='checkbox' sizeCheckbox='normal' label='genm'/>
             <Input type='radio'/>
 
         </div>

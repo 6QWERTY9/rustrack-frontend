@@ -16,3 +16,14 @@ body {
 a {
     text-decoration: none;
 }
+
+/* Для WebKit (Chrome, Safari, Opera) */
+input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    display: none;
+}
+
+/* Для Internet Explorer */
+input::-ms-clear {
+    display: none;
+}
