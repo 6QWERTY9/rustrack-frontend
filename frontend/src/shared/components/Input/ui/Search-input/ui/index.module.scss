@@ -1,0 +1,61 @@
+@use "../../../../../../app/style/vars" as *;
+@use '../../../../../../app/style/mixins' as *;
+
+.input_wrapper  {
+    display: flex;
+    width: max-content;
+    position: relative;
+
+    .search {
+        width: 280px;
+        height: 44px;
+        
+        padding-left: 5px;
+        outline: none;
+
+        border: 1px solid #A1A1A1;
+        border-radius: 4px;
+        transition: 200ms ease-in-out;
+
+        @include textStyle($fontSize: $desFontSize16);
+
+        &::placeholder {
+            @include textStyle($fontSize: $desFontSize16, $color: #A1A1A1)
+        }
+        &:hover {
+            border: 1px solid $black;
+            transition: 200ms ease-in-out;
+        }
+
+        &:focus {
+            border: 1px solid $yellow;
+            box-shadow: 0px 0px 8px 0px #FEC80B66;
+            &::placeholder {
+                color: $black;
+            }
+        }
+    }
+    .search_button {
+        position: absolute;
+        top: 28%;
+        right: 5%;
+        background: none;
+        border: none;
+        
+        .icon > div > svg {
+            path {
+                fill: #A1A1A1;
+            }
+        }
+
+        
+        .icon {
+    
+            cursor: pointer;
+        }
+
+    }
+}
+.input_wrapper .search:focus ~ .search_button .icon > div > svg path {
+fill: #000000; /* черный */
+}
