@@ -4,7 +4,7 @@ import { Button } from '../shared/components/Button';
 
 import { ChevronButton } from '../shared/components/ChevronButton';
 
-import { LinkLayout } from '../shared/components/LinkLayout';
+import { LinkLayout } from '../shared/components/LinkLayout';[]
 import { Input } from '../shared/components/Input';
 
 export const App = () => {
@@ -21,7 +21,7 @@ export const App = () => {
             <Input type='search'/>
             <Input/>
             <Input type='checkbox' sizeCheckbox='normal' label='genm'/>
-            <Input type='radio'/>
+            <Input type='radio' label='asdas'/>
 
         </div>
     );

@@ -6,7 +6,7 @@ export const CheckboxInput: React.FC<ICheckboxInputProps> = ({ id, label, sizeCh
     return (
     <div className={css.wrapper}>
         <input type="checkbox" aria-label={label} id={id} className={clsx(css.input, css.checkbox, css[sizeCheckbox])} {...props} />
-        <label htmlFor={id}>{label}</label>
+        <label htmlFor={id} className={css.label_text}>{label}</label>
     </div>
     )
 };
