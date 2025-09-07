@@ -19,7 +19,7 @@ export const App = () => {
             </BrowserRouter>
             <ChevronButton directionIcon="left" />
             <Input type='search'/>
-            <Input/>
+            <Input label='Имя' placeholder='Имя'/>
             <Input type='checkbox' sizeCheckbox='normal' label='genm'/>
             <Input type='radio' label='asdas'/>
 

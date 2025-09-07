@@ -10,16 +10,16 @@ export const TextInput: React.FC<ITextInputProps> = ({label, error, ...props}) =
   return (
     <div className={css.input_wrapper}>
       {label && (
-        <label htmlFor={props.id} aria-label={label} className={clsx(css.label)}>
+        <label htmlFor={props.id} aria-label={label} className={clsx(css.label, {[css.error_label]: error} )}>
           {label}
         </label>
       )}
       <input type="text" placeholder={props.placeholder} onChange={(e) => setInputVal(e.target.value)} value={inputVal} className={clsx(css.input, css.text)} />
       {inputVal && (
-        <ReactSVG src="./svg/close.svg" onClick={() => setInputVal('')} className={css.cross}/>
+        <ReactSVG src="./svg/close.svg" onClick={() => setInputVal('')} className={clsx(css.cross, {[css.error_cross]: error})}/>
       )}
       {error && (
-          <span className={clsx(css.error_massage)}>
+          <span className={clsx(css.error_massage, )}>
             {error}
           </span>
       )}

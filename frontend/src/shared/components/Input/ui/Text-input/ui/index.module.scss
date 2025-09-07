@@ -1,3 +1,72 @@
+@use "../../../../../../app/style/vars" as *;
+@use '../../../../../../app/style/mixins' as *;
+
 .input_wrapper {
-    background-color: rebeccapurple;
+    width: max-content;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+
+    .label {
+        @include textStyle($fontSize: $desFontSize14, $color: #A1A1A1);
+        &.error_label {
+            color: #FF3939;
+        }   
+    }
+
+    .text {
+        width: 312px;
+        height: 44px;
+
+        outline: none;
+
+        border: 1px solid #A1A1A1;
+        border-radius: 4px;
+
+        padding-left: 10px;
+        @include textStyle($fontSize: $desFontSize16);
+
+        &::placeholder {
+            @include textStyle($fontSize: $desFontSize16, $color: #A1A1A1)
+        }
+
+                &:hover {
+            border: 1px solid $black;
+            transition: 200ms ease-in-out;
+        }
+
+        &:focus {
+            border: 1px solid $yellow;
+            box-shadow: 0px 0px 8px 0px #FEC80B66;
+            &::placeholder {
+                color: $black;
+            }
+        }
+        
+
+    }
+    .cross {
+        position: absolute;
+        
+        cursor: pointer;
+        top: 46%;
+        right: 5%;
+        &.error_cross {
+            top: 37%;
+            right: 5%;
+            & > div > svg {
+                path {
+                    fill: #FF3939;
+                }
+            }
+        }
+            
+    }
+
+
+    .error_massage  {
+        
+        @include textStyle($fontSize: $desFontSize14, $color: #FF3939);
+    }
 }
