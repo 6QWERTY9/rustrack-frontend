@@ -78,6 +78,7 @@
     }
 
     .label_text {
-        @include textStyle($fontSize: $desFontSize16)
+        width: 261px;
+        @include textStyle($fontSize: $desFontSize14, $color: #A1A1A1)
     }
 }

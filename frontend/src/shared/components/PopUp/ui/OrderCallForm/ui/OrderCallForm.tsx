@@ -4,11 +4,12 @@ import { Input } from '../../../../Input';
 import css from './index.module.scss';
 import { ValidationSchema } from '../config';
 import type { IOrderCallFormProps } from '../model';
+import { CheckboxInput } from '../../../../Input/ui';
 
 export const OrderCallForm: React.FC<IOrderCallFormProps> = ({onSubmitSuccess}) => {
     return (
         <Formik
-            initialValues={{ name: '', phone: '' }}
+            initialValues={{ name: '', phone: '', agree: false }}
             validationSchema={ValidationSchema}
             onSubmit={(values, { setSubmitting, setErrors }) => {
                 console.log('Submitting', values);
@@ -38,6 +39,15 @@ export const OrderCallForm: React.FC<IOrderCallFormProps> = ({onSubmitSuccess}) 
                         onBlur={handleBlur} // Добавлено: обработчик потери фокуса
                         error={touched.phone ? errors.phone : ''}
                         placeholder="+7 (XXX)-XXX-XX-XX"
+                    />
+
+                    <CheckboxInput 
+                        label='Я согласен на обработку персональных
+данных компанией ООО «РусТрак»'
+                        checked={values.agree}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        name='agree'
                     />
 
                     <button type="submit" className={css.submit_btn} disabled={isSubmitting}>

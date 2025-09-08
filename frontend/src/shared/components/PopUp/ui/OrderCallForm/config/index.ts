@@ -14,4 +14,7 @@ export const ValidationSchema = Yup.object({
       const digits = value.replace(/\D/g, '');
       return digits.length === 11;
     }),
+    agree: Yup.boolean()
+    .oneOf([true], 'Необходимо согласиться с условиями')
+    .required('Согласие обязательно'),
 })
