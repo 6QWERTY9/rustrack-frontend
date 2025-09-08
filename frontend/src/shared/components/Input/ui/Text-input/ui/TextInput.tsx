@@ -1,28 +1,43 @@
 import clsx from "clsx";
 import type { ITextInputProps } from "../model";
 import css from './index.module.scss';
-import { useState } from "react";
-
 import { ReactSVG } from "react-svg";
 
-export const TextInput: React.FC<ITextInputProps> = ({label, error, ...props}) => {
-  const [inputVal, setInputVal] = useState('');
+export const TextInput: React.FC<ITextInputProps> = ({ label, error, ...props }) => {
   return (
     <div className={css.input_wrapper}>
       {label && (
-        <label htmlFor={props.id} aria-label={label} className={clsx(css.label, {[css.error_label]: error} )}>
+        <label htmlFor={props.id} aria-label={label} className={clsx(css.label, { [css.error_label]: error })}>
           {label}
         </label>
       )}
-      <input type="text" placeholder={props.placeholder} onChange={(e) => setInputVal(e.target.value)} value={inputVal} className={clsx(css.input, css.text)} />
-      {inputVal && (
-        <ReactSVG src="./svg/close.svg" onClick={() => setInputVal('')} className={clsx(css.cross, {[css.error_cross]: error})}/>
+      <input
+        type="text"
+        placeholder={props.placeholder}
+        {...props}  // ВАЖНО: прокидываем value, onChange, onBlur, name и т.п.
+        className={clsx(css.input, css.text)}
+      />
+      {props.value && (
+        <ReactSVG
+          src="./svg/close.svg"
+          onClick={() => {
+            if (props.onChange) {
+              // Сбрасываем значение через onChange с пустой строкой
+              const event = {
+                target: { name: props.name, value: '' }
+              };
+              props.onChange(event as any);
+            }
+          }}
+          className={clsx(css.cross, { [css.error_cross]: error })}
+        />
       )}
       {error && (
-          <span className={clsx(css.error_massage, )}>
-            {error}
-          </span>
+        <span className={clsx(css.error_massage)}>
+          {error}
+        </span>
       )}
     </div>
-  )
-}
+  );
+};
+

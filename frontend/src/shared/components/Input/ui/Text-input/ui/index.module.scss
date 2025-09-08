@@ -9,7 +9,7 @@
     flex-direction: column;
 
     .label {
-        @include textStyle($fontSize: $desFontSize14, $color: #A1A1A1);
+        @include textStyle($fontSize: $desFontSize14);
         &.error_label {
             color: #FF3939;
         }   

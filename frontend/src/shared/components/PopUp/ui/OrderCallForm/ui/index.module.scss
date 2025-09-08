@@ -1,0 +1,27 @@
+@use '../../../../../../app/style/mixins' as *;
+@use '../../../../../../app/style/vars' as *;
+
+.order_call {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 120px 120px 200px;
+
+    .submit_btn {
+        width: 326px;
+        height: 50px;
+
+        @include textStyle($fontSize: $desFontSize16, $fontWeight: $fontWeightReg);
+
+
+        cursor: pointer;
+
+        background: $yellow;
+        border: none;
+        border-radius: 4px;
+
+        &:hover {
+            background: $yellowHover;
+        }
+    }
+}

@@ -6,6 +6,7 @@ import { ChevronButton } from '../shared/components/ChevronButton';
 
 import { LinkLayout } from '../shared/components/LinkLayout';[]
 import { Input } from '../shared/components/Input';
+import { PopUp } from '../shared/components/PopUp';
 
 export const App = () => {
     return (
@@ -22,6 +23,7 @@ export const App = () => {
             <Input label='Имя' placeholder='Имя'/>
             <Input type='checkbox' sizeCheckbox='normal' label='genm'/>
             <Input type='radio' label='asdas'/>
+            <PopUp open={true}/>
 
         </div>
     );

@@ -1,0 +1,67 @@
+@use '../../../../app/style/mixins' as *;
+@use '../../../../app/style/vars' as *;
+
+.popUp {
+    width: 471px;
+    height: 571px;
+
+    border: 1px solid $black;
+    border-radius: 8px;
+
+    transition: 300ms ease;
+
+    &.successfully {
+        background: $yellow;
+    }
+
+    .popUp_content {
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+        grid-template-rows: 50px 0.3fr;
+        align-items: center;
+
+        &.successfully {
+            grid-template-rows: 50px 1fr 1fr;
+            
+        }
+
+        .successfully_button {
+            width: 313px;
+            height: 50px;
+
+            justify-self: center;
+            @include textStyle($fontSize: $desFontSize16, $fontWeight: $fontWeightReg);
+
+            background: none;
+
+            border: 2px solid $black;
+            border-radius: 4px;
+            transition: all 200ms ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background: #000;
+                color: white;
+            }
+            
+        }
+        .text_content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            text-align: center;
+            .popUp_title {
+                @include textStyle($fontSize: $desFontSize32, $fontWeight: $fontWeightMed)
+            }
+            .popUp_paragraph {
+                @include textStyle($fontSize: $desFontSize16, $fontWeight: $fontWeightReg);
+
+                
+            }
+        }
+        
+    }
+
+}
