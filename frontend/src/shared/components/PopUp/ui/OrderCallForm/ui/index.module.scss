@@ -7,13 +7,19 @@
     align-items: center;
     grid-template-rows: 120px 120px 30px 200px;
 
+    @include respond-between(small, xlarge) {
+        & {
+
+        }
+    }
+
     .submit_btn {
         width: 326px;
         height: 50px;
 
         @include textStyle($fontSize: $desFontSize16, $fontWeight: $fontWeightReg);
 
-
+         
         cursor: pointer;
 
         background: $yellow;
@@ -22,6 +28,22 @@
 
         &:hover {
             background: $yellowHover;
+        }
+    }
+}
+
+.order_call {
+     @include respond-between(small, large) {
+        & {
+            grid-template-rows: 100px 100px 30px 80px;
+            align-items: center;
+            justify-items: center;
+            .submit_btn {
+                width: 254px;
+                height: 40px;
+
+                justify-self: center;
+            }
         }
     }
 }

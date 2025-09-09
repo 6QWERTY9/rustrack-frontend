@@ -10,6 +10,8 @@
 
     transition: 300ms ease;
 
+
+
     &.successfully {
         background: $yellow;
     }
@@ -63,5 +65,25 @@
         }
         
     }
+
+}
+
+
+.popUp {
+@include respond-between(small, large) { 
+    & {
+        width: 300px;
+        height: 421px;
+
+        .popUp_content {
+            grid-template-rows: 20px 0.1fr 0.3fr;
+
+            .successfully_button {
+                width: 254px;
+                height: 40px;
+            }
+        }
+    }
+}
 
 }

@@ -45,6 +45,14 @@
         }
         
 
+        @include respond-between(small, xlarge) { 
+            
+             & {
+                width: 254px;
+                
+            }
+        }
+
     }
     .cross {
         position: absolute;

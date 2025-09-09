@@ -82,3 +82,17 @@
         @include textStyle($fontSize: $desFontSize14, $color: #A1A1A1)
     }
 }
+
+.checkbox {
+    @include respond-between(small, large) {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.label_text {
+    @include respond-between(small, large) {
+        width: 16px;
+        @include textStyle($fontSize: 14px, $color: #A1A1A1)
+    }
+}
