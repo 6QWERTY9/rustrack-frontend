@@ -1,0 +1,91 @@
+@use '../../../../../../../app/style/mixins' as *;
+@use '../../../../../../../app/style/vars' as *;
+
+
+.catalog_btn {
+    width: 138px;
+    height: 42px;
+
+    @include textStyle($fontSize: $desFontSize16, $fontWeight: $fontWeightMed);
+    border: none;
+    background-color: $yellow;
+    border-radius: 4px;
+    cursor: pointer;
+
+    
+
+    &:hover {
+        background-color: $yellowHover;
+    }
+
+    &:focus {
+        background-color: $yellowPress;
+        color: #4D4011;
+    }
+    .wrapper_content {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .catalog_btn_icon {
+            width: 24px;
+            height: 24px;
+            
+            .catalog_btn_icon_content {
+                width: 100%;
+                height: 100%;
+                position: relative;
+    
+                &::before, &::after, .catalog_btn_icon_content_line {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+    
+                    background: #000;
+    
+                    position: absolute;
+                    left: 0;
+
+                    transition: all 250ms ease-in-out;
+                }
+    
+                .catalog_btn_icon_content_line {
+                    top: 45%;
+                }
+    
+                &::before {
+                    top: 15%;
+                }
+    
+                &::after {
+                    bottom: 15%;
+                    transition: 110ms;
+                }
+                
+
+                &.open {
+                    .catalog_btn_icon_content_line {
+                        rotate: -45deg;
+                    }
+
+                    &::before {
+                        top: 45%;
+                        rotate: 45deg;
+                    }
+        
+                    &::after {
+                        width: 0;
+                    }
+                }
+    
+            }
+        }
+
+    }
+
+}
