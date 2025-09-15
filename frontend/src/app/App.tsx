@@ -9,6 +9,7 @@ import { Input } from '../shared/components/Input';
 import { PopUp } from '../shared/components/PopUp';
 import { CatalogButton } from '../shared/components/Header/ui/components/CatalogButton';
 import { DropDown } from '../shared/components/Header/ui/components/DropDown';
+import { Nav } from '../shared/components/Header/ui/components/Nav';
 
 export const App = () => {
     return (
@@ -28,6 +29,9 @@ export const App = () => {
             <PopUp open={true}/>
             <CatalogButton/>
             <DropDown/>
+            <BrowserRouter>
+            <Nav/>
+            </BrowserRouter>
 
         </div>
     );

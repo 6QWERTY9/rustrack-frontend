@@ -1,0 +1,29 @@
+@use '../../../../../../../app/style/mixins' as *;
+@use '../../../../../../../app/style/vars' as *;
+
+
+.link_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+
+    @include textStyle($fontSize: $desFontSize16, $color: $black);
+
+    &.hide {
+        display: none;
+    }
+
+    .link {
+        text-decoration: none;
+        color: $black;
+        &:nth-child(1), &:nth-child(2) {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &:nth-child(1)::after, &:nth-child(2)::after {
+            content: url('./svg/triangle.svg');            
+            padding-left: 5px;
+        }
+    }
+}
