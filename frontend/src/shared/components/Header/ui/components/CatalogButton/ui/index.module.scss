@@ -12,7 +12,13 @@
     border-radius: 4px;
     cursor: pointer;
 
-    
+    &.scrolled {
+        width: 56px;
+        
+        .catalog_btn_text{
+            display: none;
+        }
+    }
 
     &:hover {
         background-color: $yellowHover;

@@ -1,0 +1,62 @@
+@use '../../../../../../../app/style/mixins' as *;
+@use '../../../../../../../app/style/vars' as *;
+
+.dropDown_wrapper {
+    width: max-content;
+    height: max-content;
+
+    display: grid;
+
+    @include textStyle($fontSize: $desFontSize14);
+    .dropDown_content {
+
+        width:max-content;
+
+        justify-self: end;
+        
+        position: relative;
+
+        .dropDown_content_title {
+            @include textStyle($fontSize: $desFontSize16);
+
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+
+            &::after {
+                content: url('./svg/triangle.svg');
+
+                padding-left: 5px;
+            }
+        }
+
+        .dropDown_menu {
+            width: 163px;
+            height: 68px;
+
+            display: none;
+            justify-content: center;
+            align-items: center;
+
+            background: #FFFFFF;
+            box-shadow: 0px 0px 24px 0px #9696961F;
+
+
+            border-radius: 8px;
+
+            position: absolute;
+            left: -31%;
+            cursor: default;
+
+            &.focused {
+                display: grid;
+            }
+        }
+
+    }
+
+    .address_company {
+        @include textStyle($fontSize: 15px, $color: #A1A1A1);
+        cursor: default;
+    }
+}

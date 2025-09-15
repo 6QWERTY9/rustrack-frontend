@@ -8,6 +8,7 @@ import { LinkLayout } from '../shared/components/LinkLayout';[]
 import { Input } from '../shared/components/Input';
 import { PopUp } from '../shared/components/PopUp';
 import { CatalogButton } from '../shared/components/Header/ui/components/CatalogButton';
+import { DropDown } from '../shared/components/Header/ui/components/DropDown';
 
 export const App = () => {
     return (
@@ -26,6 +27,7 @@ export const App = () => {
             <Input type='radio' label='asdas'/>
             <PopUp open={true}/>
             <CatalogButton/>
+            <DropDown/>
 
         </div>
     );

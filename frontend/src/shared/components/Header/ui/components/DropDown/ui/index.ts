@@ -1,3 +1,3 @@
-import DropDown from './DropDown.tsx'
+import {DropDown} from './DropDown.tsx'
 
 export { DropDown }
