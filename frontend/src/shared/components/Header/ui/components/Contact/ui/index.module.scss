@@ -1,0 +1,30 @@
+@use '../../../../../../../app/style/mixins' as *;
+@use '../../../../../../../app/style/vars' as *;
+.contacts_wrapper {
+    display: flex;
+
+    width: max-content;
+    gap: 35px;
+
+    .contact_text {
+        display: flex;
+        flex-direction: column;
+
+        align-items: end;
+        gap: 5px;
+        @include textStyle($fontSize: 16px, $color: #A1A1A1)
+        
+    }
+
+    .order_call_btn {
+        width: 46px;
+        height: 46px;
+
+        border-radius: 50%;
+
+        border: none;
+        background: $yellow;
+
+        cursor: pointer;
+    }
+}

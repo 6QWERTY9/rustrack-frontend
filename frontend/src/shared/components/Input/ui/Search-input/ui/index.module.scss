@@ -18,6 +18,23 @@
         transition: 200ms ease-in-out;
 
         @include textStyle($fontSize: $desFontSize16);
+        
+        &.radius {
+            width: 312px;
+            height: 36px;
+
+            border: 1px solid #FEC80B;
+            border-radius: 40px;
+            outline: none;
+            &:focus {
+                box-shadow: 0px 0px 8px 0px #FEC80B66;
+            }
+            &:hover {
+                border: 1px solid #FEC80B;
+            }
+
+            
+        }
 
         &::placeholder {
             @include textStyle($fontSize: $desFontSize16, $color: #A1A1A1)
@@ -54,6 +71,9 @@
             cursor: pointer;
         }
 
+        &.radius {
+            top: 23.4%;
+        }
     }
 }
 .input_wrapper .search:focus ~ .search_button .icon > div > svg path {

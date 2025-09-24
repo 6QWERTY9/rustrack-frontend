@@ -5,28 +5,18 @@ import { CloseButton } from './CloseButton';
 import { OrderCallForm } from './OrderCallForm';
 import clsx from 'clsx';
 
-export const PopUp: React.FC<IPopUpProps> = ({ open }) => {
-    const [isOpen, setIsOpen] = useState(open);
+export const PopUp: React.FC<IPopUpProps> = ({ open, onClose }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
-
-    const handleCloseBtn = () => {
-        setIsOpen(false);
-    };
-
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLDialogElement>) => {
-        if (e.key === 'Escape') {
-            setIsOpen(false);
-        }
-    };
 
     const onFormSuccess = () => {
         setIsSubmitted(true);
     };
 
+
     return (
-        <dialog open={isOpen} id="popUp" onKeyDown={handleKeyDown} className={clsx(css.popUp, { [css.successfully]: isSubmitted })}>
+        <dialog open={open} id="popUp" className={clsx(css.popUp, { [css.successfully]: isSubmitted })}>
             <div className={clsx(css.popUp_content, { [css.successfully]: isSubmitted })}>
-                <CloseButton onClick={handleCloseBtn} />
+                <CloseButton onClick={onClose ? onClose : () => {return}} />
                 <div className={clsx(css.text_content, { [css.successfully]: isSubmitted })}>
                     {isSubmitted ? (
                         <>
@@ -42,7 +32,7 @@ export const PopUp: React.FC<IPopUpProps> = ({ open }) => {
                 </div>
                 {isSubmitted ? (
                     // После отправки — показать только кнопку закрытия (дополнительно к CloseButton, если нужно)
-                    <button onClick={handleCloseBtn} className={css.successfully_button}>Закрыть</button>
+                    <button onClick={onClose} className={css.successfully_button}>Закрыть</button>
                 ) : (
                     <OrderCallForm onSubmitSuccess={onFormSuccess} />
                 )}

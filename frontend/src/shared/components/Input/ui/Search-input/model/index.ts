@@ -4,5 +4,5 @@ export interface ISearchInputProps extends Omit<InputHTMLAttributes<HTMLInputEle
     value?:  string;
     onChange?: (value:string) => void;
     placeholder?: string;
-    
+    radius?: boolean;
 }

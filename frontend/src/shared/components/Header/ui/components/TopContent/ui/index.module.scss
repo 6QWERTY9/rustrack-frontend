@@ -1,0 +1,73 @@
+@use '../../../../../../../app/style/mixins' as *;
+
+
+.top_content_wrapper {
+    width: 95%;
+    height: 100%;
+
+    justify-self: center;
+
+    .top_content {
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+
+        grid-template-columns: 0.2fr 1fr 1fr 0.8fr;
+
+        .logo_wrapper {
+            display: flex;
+
+            align-items: center;
+            gap: 10px;
+            @include textStyle;
+
+            position: relative;
+
+
+            .logo {
+                display: flex;
+                align-items: center;
+
+                @include textStyle($fontSize: 32px, $fontWeight: bold);
+                text-transform: uppercase;
+
+                gap: 10px;
+
+                & > div > div {
+                    display: flex;
+                    align-items: center;
+                }
+
+                &::after {
+                    content: '';
+                    width: 2px;
+                    height: 23px;
+
+                    background: #FEC80B;
+                }
+            }
+
+            .logo_text {
+                display: inline-flex;
+
+                width: 200px;
+            }
+        }
+        .dropDown_top_content_wrapper {
+            grid-column: 3/4;
+            width: max-content;
+            justify-self: end;
+
+            padding-right: 25px;
+        }
+        .contact_top_content_wrapper {
+            grid-column: 4/5;
+
+            width: max-content;
+            justify-self: center;
+        }
+    }
+    
+    
+}
