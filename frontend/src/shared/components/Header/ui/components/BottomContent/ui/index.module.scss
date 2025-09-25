@@ -1,0 +1,42 @@
+@use '../../../../../../../app/style/mixins' as *;
+
+.bottom_content_wrapper {
+    width: 95%;
+    height: 100%;
+
+    justify-self: center;
+
+    .bottom_content {
+        width: 100%;
+        height: 100%;
+
+        display: grid;
+
+        grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+        align-items: center;
+
+        .menu_nav_wrapper {
+            grid-column: 2/4;
+            justify-self: center;
+        }
+
+        .search_wrapper {
+            grid-column: 5/8;
+            justify-self: end;
+            
+        }
+
+        .user_items_wrapper {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: row;
+            gap: 24%;
+
+            align-items: center;
+            justify-content: center;
+
+        }
+    }
+}

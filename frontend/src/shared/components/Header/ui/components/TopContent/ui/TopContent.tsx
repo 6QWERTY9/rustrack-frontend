@@ -4,6 +4,8 @@ import css from './index.module.scss'
 import { Contacts } from "../../Contact/ui/Contact";
 import { PopUp } from "../../../../../PopUp";
 import { useState } from "react";
+import useDeviceType from "../../../../../../hooks/useDeviceType";
+import clsx from "clsx";
 
 export const TopContent = () => {
   const [popUpOpen, setPopUpOpen] = useState(false);
@@ -35,13 +37,14 @@ export const TopContent = () => {
 }
 
 const Logo = () => {
+  const deviceType = useDeviceType();
   return (
   <div className={css.logo_wrapper}>
-    <div className={css.logo}>
+    <div className={clsx(css.logo, {[css.disable_line]: deviceType === 'tablet' || deviceType === 'mobile'})}>
       <ReactSVG src="./svg/Subtract.svg"/>
       <span>рустрак</span>
     </div>
-    <div className={css.logo_text}>
+    <div className={clsx(css.logo_text, {[css.disable]: deviceType === 'tablet' || deviceType === 'mobile'})}>
       <span>
         производство и продажа автоспецтехники
       </span>

@@ -12,7 +12,11 @@
 
         align-items: end;
         gap: 5px;
-        @include textStyle($fontSize: 16px, $color: #A1A1A1)
+        @include textStyle($fontSize: 16px, $color: #A1A1A1);
+
+        &.disable {
+            display: none;
+        }
         
     }
 

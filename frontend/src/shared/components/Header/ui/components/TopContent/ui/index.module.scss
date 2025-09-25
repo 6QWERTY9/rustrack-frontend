@@ -6,6 +6,7 @@
     height: 100%;
 
     justify-self: center;
+    
 
     .top_content {
         width: 100%;
@@ -46,18 +47,31 @@
 
                     background: #FEC80B;
                 }
+
+                &.disable_line::after {
+                    display: none;
+                }
             }
 
             .logo_text {
                 display: inline-flex;
 
                 width: 200px;
+
+                user-select: none;
+
+                &.disable {
+                    display: none;
+                }
             }
         }
         .dropDown_top_content_wrapper {
             grid-column: 3/4;
             width: max-content;
             justify-self: end;
+
+            display: grid;
+            align-items: center;
 
             padding-right: 25px;
         }
@@ -68,6 +82,7 @@
             justify-self: center;
         }
     }
+    
     
     
 }

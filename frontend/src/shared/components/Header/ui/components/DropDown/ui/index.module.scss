@@ -58,5 +58,25 @@
     .address_company {
         @include textStyle($fontSize: 15px, $color: #A1A1A1);
         cursor: default;
+        justify-self: center;
+        
+
+        &.tablet_view {
+            display: inline-flex;
+
+            align-items: center;
+            
+            
+            text-align: end;
+
+
+            width: 90%;
+            height: 100%;
+        }
     }
+}
+
+
+.disable {
+    display: none;
 }

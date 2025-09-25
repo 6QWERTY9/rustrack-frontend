@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import css from './index.module.scss';
 import clsx from 'clsx';
+import useDeviceType from '../../../../../../hooks/useDeviceType';
 
 
 export const DropDown= () => {
   const [isFocused, setIsFocused] = useState(false);
+  const deviceType = useDeviceType();
 
 
   return (
-    <div className={css.dropDown_wrapper}>
+    <div className={clsx(css.dropDown_wrapper, {[css.disable]: deviceType === 'mobile'})}>
         <div 
-          className={css.dropDown_content}
+          className={clsx(css.dropDown_content, {[css.disable]: deviceType === 'tablet'})}
           onMouseEnter={() => setIsFocused(true)}
           onMouseLeave={() => setIsFocused(false)}
         >
@@ -26,7 +28,7 @@ export const DropDown= () => {
               <span>Сб-вс: с 10:00 до 16:00</span>
             </div>
         </div>
-        <p className={css.address_company}>
+        <p className={clsx(css.address_company, {[css.tablet_view]: deviceType === 'tablet'})}>
           г. Нижний Новгород ул. Торфяная, 35
         </p>
     </div>
