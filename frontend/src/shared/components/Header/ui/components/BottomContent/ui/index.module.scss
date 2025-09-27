@@ -1,4 +1,6 @@
 @use '../../../../../../../app/style/mixins' as *;
+@use '../../../../../../../app/style/vars' as *;
+
 
 .bottom_content_wrapper {
     width: 95%;
@@ -14,6 +16,33 @@
 
         grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         align-items: center;
+
+        @include respond-between(medium, xlarge) {
+            background: rebeccapurple;
+            grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 1fr;
+
+            .menu_nav_wrapper {
+                display: none;
+            }
+        }
+
+        @include respond-between(small, medium) {
+            background: rebeccapurple;
+            grid-template-columns: 0.4fr 1fr 1fr 1fr;
+
+            .menu_nav_wrapper {
+                display: none;
+            }
+
+            .search_wrapper {
+                &.search_open {
+                grid-column: 1/5;
+                
+                justify-self: start;
+                transition: all 200ms ease-in-out;
+            }
+            }
+        }
 
         .catalog_btn_wrapper {
             &.disable {
@@ -34,18 +63,6 @@
             justify-self: end;
             padding-right: 5%;
             
-            &.tablet {
-                grid-column: 5/7;
-            }
-            &.mobile {
-                grid-column: 4/7;
-                justify-content: center;
-            }
-            &.search_open {
-                grid-column: 3/8;
-                justify-self: center;
-                transition: all 200ms ease-in-out;
-            }
         }
 
         .user_items_wrapper {
