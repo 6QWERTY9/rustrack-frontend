@@ -1,12 +1,9 @@
+import type { ICatalogItemProp } from "../ui/components/CatalogItem";
+
 export interface ICatalogProps {
     isOpen?: boolean;
-    items?: IItemsProps[];
+    items?: ICatalogItemProp[];
 }
 
-export interface IItemsProps {
-    src?: string;
-    text?: string;
-    title?: string;
-}
 
 

@@ -9,13 +9,19 @@ import { Nav } from '../../Nav';
 import { Link } from 'react-router-dom';
 
 import useDeviceType from '../../../../../../hooks/useDeviceType';
+import { Catalog } from '../../Catalog';
 
 export const BottomContent = () => {
     const [mobSearchOpen, setMobSearchOpen] = useState(false);
     const deviceType = useDeviceType();
     const [isMobSearch, setIsmobSearch] = useState(deviceType === 'mobile');
+    const [openCatalog, setOpenCatalog] = useState(false);
 
     const searchRef = useRef<HTMLDivElement>(null);
+
+    const handleOpenCatalog = () => {
+        setOpenCatalog((prev) => !prev);
+    }
 
     const handleMobSearchOpen = () => {
         setMobSearchOpen((prev) => !prev);
@@ -49,7 +55,7 @@ export const BottomContent = () => {
         <div className={css.bottom_content_wrapper}>
             <div className={clsx(css.bottom_content, css[deviceType])}>
                 <div className={clsx(css.catalog_btn_wrapper, { [css.disable]: mobSearchOpen })}>
-                    <CatalogButton />
+                    <CatalogButton onClick={handleOpenCatalog} />
                 </div>
                 <div className={clsx(css.menu_nav_wrapper)}>
                     <Nav />
@@ -61,6 +67,7 @@ export const BottomContent = () => {
                     <UserItems to={'/wishlist'} src={'./svg/wishlist.svg'} />
                     <UserItems to={'/favorites'} src={'./svg/favorites.svg'} />
                 </div>
+                <Catalog isOpen={openCatalog}/>
             </div>
         </div>
     );
