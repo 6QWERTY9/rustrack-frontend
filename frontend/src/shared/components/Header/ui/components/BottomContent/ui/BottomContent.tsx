@@ -54,7 +54,7 @@ export const BottomContent = () => {
                 <div className={clsx(css.menu_nav_wrapper)}>
                     <Nav />
                 </div>
-                <div className={clsx(css.search_wrapper, css[deviceType], { [css.search_open]: mobSearchOpen })}>
+                <div className={clsx(css.search_wrapper, css[deviceType], { [css.search_open]: mobSearchOpen })} ref={searchRef}>
                     {isMobSearch ? <ReactSVG src="./svg/search_button.svg" onClick={handleMobSearchOpen} /> : <Input type="search" radius={true} />}
                 </div>
                 <div className={clsx(css.user_items_wrapper, { [css.disable]: mobSearchOpen })}>

@@ -17,8 +17,7 @@
         grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         align-items: center;
 
-        @include respond-between(medium, xlarge) {
-            background: rebeccapurple;
+        @include respond-between(medium, xlarge) {            
             grid-template-columns: 0.4fr 1fr 1fr 1fr 1fr 1fr;
 
             .menu_nav_wrapper {
@@ -27,7 +26,6 @@
         }
 
         @include respond-between(small, medium) {
-            background: rebeccapurple;
             grid-template-columns: 0.4fr 1fr 1fr 1fr;
 
             .menu_nav_wrapper {

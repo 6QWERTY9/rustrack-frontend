@@ -4,9 +4,10 @@ export interface ICatalogProps {
 }
 
 export interface IItemsProps {
-    src?: string;
-    text?: string;
+    to?: string;
+    text?: string[];
     title?: string;
+    id?: string;
 }
 
 
