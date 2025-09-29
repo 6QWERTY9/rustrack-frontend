@@ -1,0 +1,69 @@
+@use '../../../../../../../app/style/mixins' as *;
+@use '../../../../../../../app/style/vars' as *;
+.catalog_wrapper {
+    width: 100%;
+    height: 601px;
+    
+    position: fixed;
+    top: 20%;
+
+    transition: all 250ms ease-in-out;
+
+    background: #fdf6f6;
+
+    outline: none;
+    border: none;
+
+    .catalog_content_wrapper {
+        width: 100%;
+        height: 100%;
+
+        padding: 28px;
+
+        display: grid;
+        grid-template-columns: 0.5fr 1fr 1fr 1fr;
+        position: relative;
+        justify-content: center;
+
+    }
+    @include respond-between('medium', 'xlarge') {
+        top: 22%;
+        & {
+            .catalog_content_wrapper {
+                
+                grid-template-columns: 1fr;
+                grid-template-rows: 0.1fr;
+                grid-auto-rows: 0.1fr;
+                align-items: center;
+            }
+        }    
+    }
+@include respond-between('small', 'medium') {
+    top: 22%;
+    & {
+        .catalog_content_wrapper {
+            // Убираем Grid и переходим на Flexbox для динамической высоты
+            display: flex;
+            flex-direction: column; // Вертикальный стек
+             // Небольшой отступ между элементами (если нужно)
+            align-items: stretch; // Растягиваем элементы по ширине
+            
+            // Убираем старые grid-свойства
+            // grid-template-columns: 1fr; // Удалено
+            // grid-template-rows: repeat(3,0.1fr); // Удалено
+            // align-items: center; // Заменено на align-items: stretch; в flex
+        }
+        
+        // Стили для списка ссылок (добавляем анимацию)
+        .links_list {
+            max-height: 0; // Скрыто по умолчанию
+            overflow: hidden; // Скрываем содержимое при max-height: 0
+            transition: max-height 0.3s ease-in-out; // Плавное раскрытие (0.3s — длительность, можно изменить)
+            
+            &.opened { // Класс для открытого состояния (добавьте его в JSX, когда isExpanded === true)
+                max-height: 500px; // Максимальная высота, достаточная для списка (или используйте calc/auto, но для анимации лучше фиксировать)
+            }
+        }
+    }
+}
+}

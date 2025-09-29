@@ -1,0 +1,122 @@
+@use '../../../../../../../../../../app/style/mixins' as *;
+@use '../../../../../../../../../../app/style/vars' as *;
+
+.catalog_item {
+    width: 100%;
+    height: 90%;
+
+    
+
+    .catalog_item_wrapper {
+        @include textStyle($fontSize: 16px);
+
+        display: grid;
+        row-gap: 5%;
+        justify-content: center;
+        
+        position: relative;
+        
+        .catalog_item_title{
+            user-select: none;
+            cursor: pointer;
+            white-space: nowrap;
+            
+
+            &.desctop, &.mobile {
+                @include textStyle($fontSize: 22px, $fontWeight: 800);
+            }
+            &.tablet {
+                
+                @include textStyle($fontSize: 22px, $fontWeight: 800, $color:#A1A1A1);
+            }
+            &.select {
+                @include textStyle($fontSize: 22px, $fontWeight: 800);
+            }
+        }
+        
+        .links_list {
+
+            display: flex;
+            flex-direction:column;
+            gap: 23px;
+            
+            width: max-content;
+            height: max-content;
+
+            transition: all 150ms ease-in-out;
+
+            .link_wrapper {
+                .link {
+                    color: black;
+                }
+            }
+
+            &.hidden {
+                height: 0;
+                display: none; 
+
+            }
+        }
+    }
+
+        @include respond-between(medium, xlarge) {
+            & {
+                
+                
+                &::after {
+                        content: '';
+                        width: 2px;
+                        height: 95%;
+
+                        background-color: $yellow;
+
+                        position: absolute;
+                        top: 2%;
+                        left: 30%;
+                    }
+                .catalog_item_wrapper {
+                    display: flex;
+                    justify-content: start;
+                    
+
+                    .links_list {
+                        display: grid;
+                        justify-content: center;
+                        
+                        position: fixed;
+                        left: 50%;
+                        top: 30%;
+
+                        
+                    }
+                }
+            }    
+        }
+
+         @include respond-between(small, medium) {
+            & {
+                width: 100%;
+                height: 10%;
+                
+                &.open {
+                    height: 400px;
+                }
+                .catalog_item_wrapper {
+                    justify-content: start;
+                    align-items: start;
+                    
+                    .catalog_item_title:first-child::after {
+                        content: url('./svg/Polygon.svg');
+                    }
+                    
+
+                    .links_list {
+                        display: grid;
+                        justify-content: center;
+                        gap: 10px;
+                        text-align: center;
+                    }
+                }
+            }    
+        }
+}

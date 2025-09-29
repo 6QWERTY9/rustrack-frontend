@@ -1,5 +1,8 @@
+
+
 export interface ICatalogProps {
     isOpen?: boolean;
+
     items?: IItemsProps[];
 }
 
@@ -9,5 +12,6 @@ export interface IItemsProps {
     title?: string;
     id?: string;
 }
+
 
 
