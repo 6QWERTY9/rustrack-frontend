@@ -26,31 +26,34 @@
             position: relative;
 
 
-            .logo {
-                display: flex;
-                align-items: center;
-
-                @include textStyle($fontSize: 32px, $fontWeight: bold);
-                text-transform: uppercase;
-
-                gap: 10px;
-
-                & > div > div {
+            .logo  {
+                & > a {
+                    @include textStyle($fontSize: 32px, $fontWeight: bold);
+                    text-transform: uppercase;
                     display: flex;
                     align-items: center;
+
+                    
+
+                    gap: 10px;
+
+                    & > div > div {
+                        display: flex;
+                        align-items: center;
+                    }
+                    &::after {
+                        content: '';
+                        width: 2px;
+                        height: 23px;
+    
+                        background: #FEC80B;
+                    }
+    
+                    &.disable_line::after {
+                        display: none;
+                    }
                 }
 
-                &::after {
-                    content: '';
-                    width: 2px;
-                    height: 23px;
-
-                    background: #FEC80B;
-                }
-
-                &.disable_line::after {
-                    display: none;
-                }
             }
 
             .logo_text {

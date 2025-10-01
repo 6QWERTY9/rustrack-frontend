@@ -94,4 +94,13 @@
 
     }
 
+    @include respond-between(small, medium) {
+        & {
+            width: 56px;
+        }
+           .catalog_btn_text {
+            display: none;
+           }
+        }
+
 }

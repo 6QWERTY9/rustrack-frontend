@@ -6,6 +6,7 @@ import { PopUp } from "../../../../../PopUp";
 import { useState } from "react";
 import useDeviceType from "../../../../../../hooks/useDeviceType";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 export const TopContent = () => {
   const [popUpOpen, setPopUpOpen] = useState(false);
@@ -40,9 +41,11 @@ const Logo = () => {
   const deviceType = useDeviceType();
   return (
   <div className={css.logo_wrapper}>
-    <div className={clsx(css.logo, {[css.disable_line]: deviceType === 'tablet' || deviceType === 'mobile'})}>
-      <ReactSVG src="./svg/Subtract.svg"/>
-      <span>рустрак</span>
+    <div className={clsx(css.logo)}>
+      <Link to={'/'} className={clsx({[css.disable_line]: deviceType === 'tablet' || deviceType === 'mobile'})}>
+        <ReactSVG src="./svg/Subtract.svg"/>
+        <span>рустрак</span>
+      </Link>
     </div>
     <div className={clsx(css.logo_text, {[css.disable]: deviceType === 'tablet' || deviceType === 'mobile'})}>
       <span>

@@ -47,6 +47,7 @@
             flex-direction: column; // Вертикальный стек
              // Небольшой отступ между элементами (если нужно)
             align-items: stretch; // Растягиваем элементы по ширине
+            justify-content: flex-start;
             
             // Убираем старые grid-свойства
             // grid-template-columns: 1fr; // Удалено

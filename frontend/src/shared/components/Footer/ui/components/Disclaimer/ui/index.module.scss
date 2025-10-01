@@ -1,0 +1,16 @@
+@use '../../../../../../../app/style/mixins' as *;
+
+.disclaimer_wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    width: 100%;
+
+    
+    @include textStyle($fontSize: 14px, $fontWeight:400, $color:#A1A1A1);
+    & > span {
+        &:last-child {
+            padding-top: 10px;
+        }
+    }
+}

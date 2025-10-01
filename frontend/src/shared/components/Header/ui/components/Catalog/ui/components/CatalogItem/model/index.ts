@@ -1,7 +1,7 @@
 export interface ICatalogItemProp {
     
     id: string;
-
+    isFooter?: boolean
     title: string;
     links?: ILinks[];
 

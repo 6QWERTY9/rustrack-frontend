@@ -1,0 +1,17 @@
+@use '../../../../../../../app/style/mixins' as *;
+
+.footer_contacts_wrapper {
+    width: max-content;
+    height: max-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .footer_contacts_text {
+        display: flex;
+        flex-direction: column;
+
+        @include textStyle($fontSize: 16px, $fontWeight: 500, $color: #A1A1A1)
+    }
+
+}

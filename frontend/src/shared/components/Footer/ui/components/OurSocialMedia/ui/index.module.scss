@@ -1,0 +1,16 @@
+@use '../../../../../../../app/style/mixins' as *;
+
+.our_social_media_wrapper {
+    display: flex;
+    gap: 5%;
+
+    justify-self: start;
+    padding-left: 10%;
+
+    @include respond-between(medium, xlarge) {
+        & {
+            justify-self: end;
+            padding-left: 0;
+        }
+    }
+}

@@ -1,4 +1,5 @@
-/* import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+/* 
 import { ReactSVG } from 'react-svg';
 import { Button } from '../shared/components/Button';
 
@@ -11,12 +12,16 @@ import { CatalogButton } from '../shared/components/Header/ui/components/Catalog
 import { DropDown } from '../shared/components/Header/ui/components/DropDown';
 import { Nav } from '../shared/components/Header/ui/components/Nav';
 import { Contacts } from '../shared/components/Header/ui/components/Contact/ui/Contact'; */
+import { Footer } from '../shared/components/Footer';
 import { Header } from '../shared/components/Header';
 
 export const App = () => {
     return (
         <div>
+            <BrowserRouter>
             <Header/>
+            <Footer/>
+            </BrowserRouter>
         </div>
     );
 };

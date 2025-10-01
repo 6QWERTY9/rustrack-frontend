@@ -1,0 +1,10 @@
+@use '../../../../../../../app/style/mixins' as *;
+@use '../../../../../../../app/style/vars' as *;
+.footer_top_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include respond-between(small, medium) {
+        grid-template-columns: 1fr;
+    }
+}
