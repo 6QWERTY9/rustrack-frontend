@@ -1,0 +1,21 @@
+// src/styles/Layout.module.scss
+.layout {
+  display: flex;
+  flex-direction: column;  // Вертикальный лейаут: header сверху, main посередине, footer снизу
+  min-height: 100vh;  // Занимает всю высоту экрана
+  background-color: #ffffff;  // Фон страницы (можно изменить)
+}
+
+.main {
+  flex: 1;  // main растягивается, чтобы занять оставшееся пространство
+  padding: 20px;  // Внутренние отступы для контента
+   // Ограничение ширины для больших экранов
+    // Центрирование
+  background-color: #fff;  // Белый фон для контента
+  
+    
+  // Responsive: на мобильных меньше отступов
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+}
