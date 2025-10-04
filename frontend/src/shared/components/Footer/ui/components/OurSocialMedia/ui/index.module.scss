@@ -5,11 +5,18 @@
     gap: 5%;
 
     justify-self: start;
-    padding-left: 10%;
+    padding-left: 0%;
 
     @include respond-between(medium, xlarge) {
         & {
             justify-self: end;
+            padding-left: 0;
+        }
+    }
+    @include respond-between(small, medium) {
+        & {
+            gap: 2%;
+            justify-self: flex-start;
             padding-left: 0;
         }
     }

@@ -6,5 +6,6 @@
 
     @include respond-between(small, medium) {
         grid-template-columns: 1fr;
+        gap: 25px;
     }
 }

@@ -39,7 +39,7 @@
         }    
     }
 @include respond-between('small', 'medium') {
-    top: 22%;
+    top: 17%;
     & {
         .catalog_content_wrapper {
             // Убираем Grid и переходим на Flexbox для динамической высоты

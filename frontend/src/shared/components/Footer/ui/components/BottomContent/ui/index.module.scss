@@ -1,4 +1,14 @@
+@use '../../../../../../../app/style/mixins' as *;
 .footer_bottom_content {
     display: grid;
     grid-template-columns: 1fr 1fr;
+
+    @include respond-between(small, medium) {
+        & {
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 25px;
+            
+        }
+    }
 }
