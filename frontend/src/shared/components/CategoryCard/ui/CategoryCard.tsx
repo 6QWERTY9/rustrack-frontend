@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import type { ICategoryCardProps } from '../model';
 import css from './index.module.scss';
-import { ROUTE_PATHS } from '../../../../app/router/routesPath';
+import { routesPath } from '../../../../app/router/routesPath';
 
 export const CategoryCard: React.FC<ICategoryCardProps> = ({catgoryID='caravans', title='Автофургоны', preTitle='27 моделей', img}) => {
   return (
-    <Link to={ROUTE_PATHS.CATEGORY(catgoryID)} style={{display: 'block', width: 'min-content'}}>
+    <Link to={routesPath.CATEGORYID(catgoryID)} style={{display: 'block', width: 'min-content'}}>
       <div className={css.category_card}>
         <div className={css.category_card_text}>
           <h3 className={css.category_card_text_title}>{title}</h3>
